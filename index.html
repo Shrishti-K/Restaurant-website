@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <style>
+  @import url('https://fonts.googleapis.com/css2?family=Bona+Nova:ital@1&family=Brygada+1918:ital@1&display=swap');
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html,
+        body{
+            /* line-height: 1.2; */
+            font-weight: 300;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        nav {
+            /* box-shadow: 5px 5px 5px black; */
+            position:sticky;
+            top: 0;
+            /* margin-bottom: 60px; */
+            background: whitesmoke;
+            /* padding: 10px; */
+        }
+        .navigation {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 100;
+        }
+        .navigation h1{
+            width: 30%;
+            height: 50px;
+            font-size: 45px;
+            background: -webkit-linear-gradient(#faf038, #f41818);
+            -webkit-background-clip: text;
+             -webkit-text-fill-color: transparent;
+            font-family: 'Bona Nova', serif;
+            font-family: 'Brygada 1918', serif;
+        }
+
+        .container{
+            width: 900px;
+            margin: 0 auto;
+        }
+        /* .bar_icon{
+            font-size: 30px;
+        } */
+        .main{
+            width: 100%;
+            /* margin: auto; */
+        }
+        .logo{
+            height: 80px;
+        }
+        .logo img{
+            height: 80px;
+            width: 160px;
+            border-radius: 70%;
+        }
+        .food{
+            display: flex;
+            gap: 100px;
+            justify-content: center;
+            align-items: center; 
+        }
+        .food_image img{
+            height: 490px;
+            width: 550px;
+            margin-left: 40px;
+            /* justify-content: space-evenly; */
+        }
+        .food_content{
+            display: flex;
+            flex-direction: column;
+            gap:20px;
+        }
+        .food_content h1{
+            font-size: 32px;
+            line-height: 1.2;
+            font-weight: 400;
+        }
+        .tag{
+            /* background-color: green; */
+            padding: 5px 10px;
+            color: green;
+            font-size: 30px;
+            border: solid;
+            border-radius: 15px;
+            align-self: flex-start;
+        }
+        .food_content button{
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            width: 170px;
+            font-size: 30px;
+            color: green;
+            border: solid;
+            padding: 5px 15px;
+            border-radius: 15px;
+            margin-top: 130px;
+            margin-left: 550px;
+            transition: 0.2s ease-in-out;
+        }
+        button a{
+            text-decoration: none;
+            color: green;
+            /* opacity: 0.8; */
+            transition: 0.2s ease-in-out;
+        }
+        .features{
+            margin-top: 200px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            /* margin-bottom: 50px; */
+        }
+        .feature{
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            transition: 0.2s ease-in-out;
+        }
+        .feature img{
+            width:200px;
+        }
+        .feature:hover{
+            transition: 0.2s ease-in-out;
+            box-shadow: 5px 5px 5px black;
+        }
+        .divider{
+            border: 1px solid white;
+            margin: 20px 0;
+
+        }
+        .menu{
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            margin: 50px 0;
+            align-items: center;
+        }
+        /* .menu .tag{
+            align-self: center;
+        } */
+        .grid-image{
+            border-radius: 10px;
+            transition: 0.2s ease-in-out;
+            width: 300px;
+            height: 200px;
+        }
+        .grid-image:hover{
+            transform: scale(1.05);
+            transition: 0.2s ease-in-out;
+        }
+        .grid{
+            display: grid;
+            gap: 10px;
+            grid-template-areas: 
+            "I1 I1 I2 I3"
+            "I1 I1 I2 I7"
+            "I4 I5 I6 I7";
+        }
+        footer{
+            background-color: aliceblue;
+        }
+        .link_lists h3{
+            margin-right:200px;
+            color:gray;
+        }
+        .link_lists ul{
+            margin-right: 60px;
+            list-style: none;
+        }
+        .link_lists ul li{
+            font-size: 16px;
+            margin-right: 200px;
+            margin-bottom: 5px;
+        }
+        .news_letter h3{
+            margin-bottom: 10px;
+            color:gray;
+        }
+        .footer_container{
+            padding: 30px;
+            display:flex;
+            justify-content: space-between;
+        }
+        @media (max-width:790px){
+            .food{
+                flex-direction: column;
+            }
+            .food_image{
+                width: 90%;
+            }
+            .food_image img{
+                width: 90%;
+            }
+            .food_content{
+                gap: 10px;
+                padding: 10px;
+            }
+            .food_content h1{
+                font-size: 35px;
+            }
+            .features{
+                flex-direction: column;
+            }
+            .feature{
+                flex-direction: column;
+            }
+            .grid{
+                padding: 10px;
+            }
+            .grid-image{
+                border-radius: 0px;
+            }
+        }
+        </style>
+</head>
+<body>
+    <nav>
+        <div class="navigation">
+            
+            <div class="logo">
+                <img src="foodlogo.jpg" alt="logo">
+            </div>
+            <h1>FOOD PLEASURE</h1>
+            <div class="bar_icon">
+                <i class="bars"></i>
+            </div>
+        </div>
+    </nav>
+    <!--main -->
+    <div class="main">
+        <div class="food">
+            <div class="food_image">
+                <img src="food1.webp" alt="food">
+                <img src="food2.jpg" alt="food">
+            </div>
+        </div>
+        <div class="food_content">
+            <div class="tag"> 50% Off On All The Products</div>
+            <h1>Enjoy Your Delicious Food</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia nobis laborum obcaecati. Dolorem ipsa adipisci nihil eius saepe fuga excepturi. Expedita laudantium inventore eveniet voluptatem dolorem quos, illo animi dolor!
+            </p>
+            <a href="#fea"><button>Explore</button></a>
+        </div>
+    </div>
+    <section class="features" id="fea">
+        <div class="feature">
+            <img src="disvou.png" alt="">
+            <div class="feature_content">
+                <h3>Discount Voucher</h3>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit voluptas quisquam nemo nihil officia minima ipsam aliquam atque mollitia est commodi laudantium ipsa quidem, quos quaerat, ipsum totam illo dolores.
+            </div>
+        </div> 
+        <div class="feature">
+            <img src="healthy logo.jpg" alt="">
+            <div class="feature_content">
+                <h3>Fresh & Healthy Food</h3>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates inventore fugiat, labore dicta ratione, ad ab consequuntur nam beatae praesentium possimus maiores cupiditate nemo. At dolores in atque laudantium deserunt?
+            </div>
+        </div>
+        <div class="feature">
+            <img src="fast.png" alt="">
+            <div class="feature_content">
+                <h3>Fast Home Delivery</h3>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam recusandae quasi impedit pariatur amet quia eveniet, quos, animi tempore possimus eius. Ea sed nobis reprehenderit illum ipsum deleniti atque quia.
+            </div>
+        </div>
+    </section>
+    <div class="divider"></div>
+    <div class="menu" >
+        <!-- <div class="tag">Our Menu</div> -->
+        <h2>Explore Our Menu</h2>
+
+        <div class="grid">
+            <div class="item1">
+                <img class="grid-image" src="menu1.avif" alt="">
+            </div>
+            <div class="item2">
+                <img class="grid-image" src="menu2.jpg" alt="">
+            </div>
+            <div class="item3">
+                <img class="grid-image" src="menu3.jpg" alt="">
+            </div>
+            <div class="item4">
+                <img class="grid-image" src="menu4.jpg" alt="">
+            </div>
+            <div class="item1">
+                <img class="grid-image" src="menu5.jpg" alt="">
+            </div>
+            <div class="item5">
+                <img class="grid-image" src="menu8.jpg" alt="">
+            </div>
+            <div class="item6">
+                <img class="grid-image" src="menu6.jpg" alt="">
+            </div>
+            <div class="item7">
+                <img class="grid-image" src="menu7.jpg" alt="">
+            </div>
+            
+        </div>
+    </div>
+    <footer>
+        <div class="footer_container">
+            <div class="footer_logo">
+                <img src="" alt="">
+            </div>
+            <div class="link_lists">
+                <h3>Main Links</h3>
+                <ul>
+                    <li>Order Tracking</li>
+                    <li>new Order</li>
+                    <li>Contact Us</li>
+                    <li>News & Blogs</li>
+                </ul>
+            </div>
+            <div class="link_lists">
+                <h3>Support</h3>
+                <ul>
+                    <li>About Us</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms & Conditions</li>
+                </ul>
+            </div>
+            <div class="news_letter">
+                <h3>Support</h3>
+                <input type="email" placeholder="Enter Your email">
+                <h3>Follow Us</h3>
+                <div class="icon_container">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                          </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                          </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
